@@ -1,2 +1,3 @@
-# s8_interfacegraphique_2048
-Jeu_2048
+# s8_interfacegraphique
+nous avons choisi le jeu 2048 comme projet
+
