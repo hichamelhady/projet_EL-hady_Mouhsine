@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MainForm.ui.qml</file>
+        <file>2048_4.PNG</file>
+        <file>2048_5.PNG</file>
+        <file>2048_8.PNG</file>
+        <file>logo ecl.png</file>
+    </qresource>
+</RCC>
