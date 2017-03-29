@@ -94,7 +94,7 @@ bool gestionjeu::gameover(){
                 z++;
         }
     }
-    if (z==16)
+    if (z==grilleSize*grilleSize)
     return(true);
    else
     return false;
