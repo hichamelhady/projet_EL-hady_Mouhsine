@@ -1,6 +1,6 @@
 # electif_s8_c++_interface_graphique ;			
 
-réalisation par Sidi Hicham EL-HADY et Lalla Yasmine MOUHSINE;    
+réalisation par Hicham EL-HADY et Yasmine MOUHSINE;    
 
 nous avons choisi le jeu 2048 comme projet;     
 
