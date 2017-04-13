@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>MainForm.ui.qml</file>
         <file>logo ecl.png</file>
+        <file>retour.png</file>
     </qresource>
 </RCC>

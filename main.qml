@@ -9,7 +9,6 @@ ApplicationWindow {
     title: qsTr("Jeu 2048")
 
 
-ExclusiveGroup { id: taillegroup }
     menuBar: MenuBar {
         Menu {
             title: qsTr("Fichier")

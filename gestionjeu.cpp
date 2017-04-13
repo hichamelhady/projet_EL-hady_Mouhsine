@@ -5,7 +5,7 @@
 using namespace std;
 long int gestionjeu::score_=0;
 int gestionjeu::highertile=0;
-int gestionjeu::taille=5;
+int gestionjeu::taille=4;
 
 //--------------constructeur---------------
 
@@ -81,23 +81,33 @@ void gestionjeu::afficher(){
 //--------fonction_victoire---------------
 
 bool gestionjeu::win(){
-    return highertile == 2048 ;//true if highertile =2048
+    return highertile == 2048 ;//renvoie true if highertile =2048
 }
 
 //----fonction_gameover---------------------
 
 bool gestionjeu::gameover(){
     int z=0;
+    int test=-1;
     for(int i=0;i<grilleSize;i++){
         for(int j=0;j<grilleSize;j++){
             if(tableau[i][j]!=0)
                 z++;
         }
     }
-    if (z==grilleSize*grilleSize)
-    return(true);
-   else
-    return false;
+
+/* if (z==grilleSize*grilleSize){
+        test=0;
+        for(int i=0;i<grilleSize-1;i++){
+            for(int j=0;j<grilleSize-1;j++){
+                if(tableau[i][j]==tableau[i][j+1]||tableau[i][j]==tableau[i+1][j])
+                    test=1;
+    }
+    }
+    }
+*/
+
+    if (z==grilleSize*grilleSize) return true;
 }
 
 //----------deplacement-------------

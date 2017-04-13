@@ -8,7 +8,7 @@ Item {
     id: item1
     width: 710
     height: 700
-   Rectangle {
+    Rectangle {
         id: rectanglegrilledujeu
         color: "#faf8ef"
         anchors.rightMargin: 0
@@ -19,19 +19,19 @@ Item {
 
 
         Rectangle {
-                id: rectangle1
-                y: 200
-                width: 480
-                height: 480
-                color: "#bbada0"
-                anchors.left: parent.left
-                anchors.leftMargin: 15
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: 15
-                scale: 1
-                transformOrigin: Item.Center
+            id: rectangle1
+            y: 200
+            width: 480
+            height: 480
+            color: "#bbada0"
+            anchors.left: parent.left
+            anchors.leftMargin: 15
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 15
+            scale: 1
+            transformOrigin: Item.Center
 
-       Grid {
+                 Grid {
                 id: grilledujeu
                 anchors.fill: parent
 
@@ -72,7 +72,6 @@ Item {
 
                             }
 
-
                       Behavior on text {
                             PropertyAnimation { target: cases
                                 property: "opacity"
@@ -111,111 +110,136 @@ Item {
               }
 
         }
-}
+
+        Image {
+            id: image
+            x: 539
+            y: 8
+            width: 137
+            height: 119
+            source: "logo ecl.png"
+        }
+
+
+        Image {
+            id: image1
+            x: 66
+            y: 104
+            width: 120
+            height: 64
+            source: "retour.png"
+        }
+    }
 
 
     Label {
-            id: logo2048
-            width: 149
-            height: 64
-            color: "#8c8178"
-            text: qsTr("2048")
-            anchors.left: parent.left
-            anchors.leftMargin: 60
-            anchors.top: parent.top
-            horizontalAlignment: Text.AlignHCenter
-            anchors.topMargin: 40
-            font.pixelSize: 50
-            font.family: "Arial"
-            font.bold: true
-            fontSizeMode: Text.Fit
-            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        }
+        id: logo2048
+        width: 152
+        height: 71
+        color: "#8c7878"
+        text: qsTr("2048")
+        textFormat: Text.RichText
+        renderType: Text.QtRendering
+        elide: Text.ElideRight
+        verticalAlignment: Text.AlignVCenter
+        anchors.left: parent.left
+        anchors.leftMargin: 54
+        anchors.top: parent.top
+        horizontalAlignment: Text.AlignHCenter
+        anchors.topMargin: 32
+        font.pixelSize: 55
+        font.family: "Arial"
+        font.bold: true
+        fontSizeMode: Text.Fit
+        wrapMode: Text.WordWrap
+    }
 
     Rectangle {
-            id: rectangle_score
-            x: 275
-            y: 68
-            width: 220
-            height: 55
-            radius: 5
-            color: "#bbada0"
-            Text{
-                text:vuegrille.score
-                width: 176
-                anchors.centerIn: parent
-                visible: true
-                scale: 1
-                wrapMode: Text.NoWrap
-                horizontalAlignment: Text.AlignHCenter
-                textFormat: Text.RichText
-                font.pixelSize: 26
-                font.bold: false
-                color:"#ffffff"
-            }
-
+        id: rectangle_score
+        x: 275
+        y: 63
+        width: 220
+        height: 40
+        radius: 2
+        color: "#bbada0"
+        Text{
+            text:vuegrille.score
+            verticalAlignment: Text.AlignVCenter
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.fill: parent
+            visible: true
+            scale: 1
+            wrapMode: Text.NoWrap
+            horizontalAlignment: Text.AlignHCenter
+            textFormat: Text.RichText
+            font.pixelSize: 28
+            font.bold: false
+            color:"#ffffff"
         }
 
-
-   Rectangle {
-            id:recatngle_recommencer
-            width: 172
-            height: 50
-            color: "#8c8178"
-            radius: 5
-            anchors.top: parent.top
-            anchors.topMargin: 115
-            anchors.left: parent.left
-            anchors.leftMargin: 50
-            Text{
-                width: 176
-                anchors.centerIn: parent
-                text: qsTr("Recommencer")
-                visible: true
-                scale: 1
-                wrapMode: Text.NoWrap
-                horizontalAlignment: Text.AlignHCenter
-                textFormat: Text.RichText
-                font.pixelSize: 26
-                font.bold: false
-                color:"#ffffff"
+    }
 
 
-            }
-            MouseArea {
+    Rectangle {
+        id:recatngle_recommencer
+        y: 125
+        width: 220
+        height: 40
+        color: "#8c8178"
+        radius: 2
+        anchors.top: parent.top
+        anchors.topMargin: 121
+        anchors.left: parent.left
+        anchors.leftMargin: 275
+        Text{
+            text: qsTr("Recommencer")
+            anchors.fill: parent
+            verticalAlignment: Text.AlignVCenter
+            visible: true
+            scale: 1
+            wrapMode: Text.NoWrap
+            horizontalAlignment: Text.AlignHCenter
+            textFormat: Text.RichText
+            font.pixelSize: 28
+            font.bold: false
+            color:"#ffffff"
+
+
+        }
+                MouseArea {
                 id: mouseArea
                 anchors.fill: parent
                   onClicked:{
-                      vuegrille.init_grille();
+                     vuegrille.init_grille();
                   }
             }
-       }
+      }
 
 
     Rectangle {
-            id:rectangelscoree
-            x: 275
-            y: 15
-            width: 220
-            height: 38
-            color: "#8c8178"
-            radius: 5
+        id:rectangelscoree
+        x: 275
+        y: 8
+        width: 220
+        height: 40
+        color: "#8c8178"
+        radius: 2
 
-            Text {
-                width: 197
-                height: 31
-                anchors.centerIn: parent
-                text: qsTr("Score")
-                visible: true
-                scale: 1
-                wrapMode: Text.NoWrap
-                horizontalAlignment: Text.AlignHCenter
-                textFormat: Text.RichText
-                font.pixelSize: 26
-                font.bold: false
-                color:"#ffffff"
-            }
+        Text {
+            text: qsTr("Score")
+            anchors.fill: parent
+            font.family: "Tahoma"
+            verticalAlignment: Text.AlignVCenter
+            visible: true
+            scale: 1
+            wrapMode: Text.NoWrap
+            horizontalAlignment: Text.AlignHCenter
+            textFormat: Text.RichText
+            font.pixelSize: 28
+            font.bold: false
+            color:"#ffffff"
         }
+    }
 
     Rectangle {
         id:choix_4x4cases
@@ -225,17 +249,17 @@ Item {
         height: 80
         color: "#8c8178"
         Text {
-            width: 197
-            height: 31
-            anchors.centerIn: parent
             text: qsTr("4")
+            verticalAlignment: Text.AlignVCenter
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.fill: parent
             visible: true
             scale: 1
             wrapMode: Text.NoWrap
             horizontalAlignment: Text.AlignHCenter
             textFormat: Text.RichText
-            font.pixelSize: 26
-            font.bold: false
+            font.pixelSize: 32
+            font.bold: true
             color:"#ffffff"                }
         Item {
             id: item2
@@ -243,11 +267,11 @@ Item {
             anchors.fill: parent
         }
 
-        MouseArea {
+            MouseArea {
             id: mouseArea2
             anchors.fill: parent
             onClicked:{
-                vuegrille.setSize(4);
+               vuegrille.setSize(4);
                 vuegrille.init_grille();
             }
         }
@@ -261,17 +285,17 @@ Item {
         height: 80
         color: "#8c8178"
         Text {
-            width: 197
-            height: 31
-            anchors.centerIn: parent
             text: qsTr("5")
+            verticalAlignment: Text.AlignVCenter
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.fill: parent
             visible: true
             scale: 1
             wrapMode: Text.NoWrap
             horizontalAlignment: Text.AlignHCenter
             textFormat: Text.RichText
-            font.pixelSize: 26
-            font.bold: false
+            font.pixelSize: 32
+            font.bold: true
             color:"#ffffff"                }
         Item {
             id: item3
@@ -279,7 +303,7 @@ Item {
             anchors.fill: parent
         }
 
-        MouseArea {
+            MouseArea {
             id: mouseArea3
             anchors.fill: parent
             onClicked:{
@@ -297,17 +321,17 @@ Item {
         height: 80
         color: "#8c8178"
         Text {
-            width: 197
-            height: 31
-            anchors.centerIn: parent
             text: qsTr("6")
+            verticalAlignment: Text.AlignVCenter
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.fill: parent
             visible: true
             scale: 1
             wrapMode: Text.NoWrap
             horizontalAlignment: Text.AlignHCenter
             textFormat: Text.RichText
-            font.pixelSize: 26
-            font.bold: false
+            font.pixelSize: 32
+            font.bold: true
             color:"#ffffff"                }
         Item {
             id: item4
@@ -318,7 +342,7 @@ Item {
         MouseArea {
             id: mouseArea4
             anchors.fill: parent
-            onClicked:{
+                  onClicked:{
                 vuegrille.setSize(6);
                 vuegrille.init_grille();
             }
@@ -333,17 +357,18 @@ Item {
         height: 80
         color: "#8c8178"
         Text {
-            width: 197
-            height: 31
-            anchors.centerIn: parent
             text: qsTr("7")
+            font.family: "Tahoma"
+            verticalAlignment: Text.AlignVCenter
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.fill: parent
             visible: true
             scale: 1
             wrapMode: Text.NoWrap
             horizontalAlignment: Text.AlignHCenter
             textFormat: Text.RichText
-            font.pixelSize: 26
-            font.bold: false
+            font.pixelSize: 32
+            font.bold: true
             color:"#ffffff"                }
         Item {
             id: item6
@@ -351,7 +376,7 @@ Item {
             anchors.fill: parent
         }
 
-        MouseArea {
+            MouseArea {
             id: mouseArea6
             anchors.fill: parent
             onClicked:{
@@ -359,7 +384,7 @@ Item {
                 vuegrille.init_grille();
             }
         }
-    }
+   }
 
     Rectangle {
         id:choix_8x8cases
@@ -369,17 +394,18 @@ Item {
         height: 80
         color: "#8c8178"
         Text {
-            width: 197
-            height: 31
-            anchors.centerIn: parent
             text: qsTr("8")
+            font.family: "Tahoma"
+            verticalAlignment: Text.AlignVCenter
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.fill: parent
             visible: true
             scale: 1
             wrapMode: Text.NoWrap
             horizontalAlignment: Text.AlignHCenter
             textFormat: Text.RichText
-            font.pixelSize: 26
-            font.bold: false
+            font.pixelSize: 32
+            font.bold: true
             color:"#ffffff"                }
         Item {
             id: item7
@@ -388,7 +414,7 @@ Item {
 
         }
 
-        MouseArea {
+            MouseArea {
             id: mouseArea7
             anchors.fill: parent
             onClicked:{
@@ -399,21 +425,21 @@ Item {
     }
 
     Label {
-            id: choixtaille
-            width: 700
-            height: 80
-            x:250
-            y:150
-            color: "#8c8178"
-            text: qsTr("Choisissez la taille de la grille du jeu !")
-            horizontalAlignment: Text.AlignHCenter
-            font.pixelSize: 13
-            font.family: "Calibri"
-            font.bold: true
-            fontSizeMode: Text.Fit
-            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-        }
+        id: choixtaille
+        width: 213
+        height: 24
+        x:501
+        y:137
+        color: "#8c7878"
+        text: qsTr("Choisissez la taille de la grille du jeu !")
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignHCenter
+        font.pixelSize: 15
+        font.family: "Calibri"
+        font.bold: true
+        fontSizeMode: Text.Fit
+        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+    }
 
 
 }
-

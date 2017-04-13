@@ -32,7 +32,11 @@ public:
     Q_PROPERTY(int taille READ getSize() NOTIFY taillechanged);
     int getSize();
 
+
+
+
     ~gestionjeu();
+
 
     Q_INVOKABLE void init_grille();//initialisation de la grille 4*4
     void Randomcase();//choix d'une case au hasard pour l'initialiser au début
@@ -54,6 +58,7 @@ signals:
     void scorechanged();
     void couleurchanged();
     void taillechanged();
+
 
 public slots:
 private:
